@@ -16,10 +16,10 @@ namespace TwentyFourHour.Data
         public Guid AuthorId { get; set; }
 
         [Required]
-        public string Title { get; set; }
+        public string PostTitle { get; set; }
 
         [Required]
-        public string Text { get; set; }
+        public string PostText { get; set; }
 
         public virtual List<Comment> ListOfComments { get; set; }
         public virtual List<Like> ListOfLikes { get; set; }
