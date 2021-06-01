@@ -14,6 +14,7 @@ namespace TwentyFourHour.Data
         public int ReplyId { get; set; }
         [Required]
         public string ReplyText { get; set; }
+        [Required]
         public Guid AuthorId { get; set; }
 
         [ForeignKey(nameof(Comments))]
