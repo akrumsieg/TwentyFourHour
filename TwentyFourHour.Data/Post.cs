@@ -10,18 +10,18 @@ namespace TwentyFourHour.Data
     public class Post
     {
         [Key]
-        public int MyProperty { get; set; }
+        public int PostId { get; set; }
 
         [Required]
         public Guid AuthorId { get; set; }
-        
+
         [Required]
         public string Title { get; set; }
 
         [Required]
         public string Text { get; set; }
 
-        public virtual List<Comment> ListOfComments{ get; set; }
+        public virtual List<Comment> ListOfComments { get; set; }
         public virtual List<Like> ListOfLikes { get; set; }
     }
 }
