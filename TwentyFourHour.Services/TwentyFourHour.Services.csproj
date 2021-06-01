@@ -55,7 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LikeService.cs" />
+    <Compile Include="CommentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReplyService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -63,6 +65,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TwentyFourHour.Data\TwentyFourHour.Data.csproj">
+      <Project>{9b378db6-3553-4198-aaef-0b4b2a7197e2}</Project>
+      <Name>TwentyFourHour.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TwentyFourHour.Models\TwentyFourHour.Models.csproj">
+      <Project>{c9c63ab0-565b-4d3e-b022-6685e3651683}</Project>
       <Project>{9B378DB6-3553-4198-AAEF-0B4B2A7197E2}</Project>
       <Name>TwentyFourHour.Data</Name>
     </ProjectReference>
