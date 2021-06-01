@@ -13,6 +13,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
+using TwentyFourHour.Data;
 using TwentyFourHour.WebAPI.Models;
 using TwentyFourHour.WebAPI.Providers;
 using TwentyFourHour.WebAPI.Results;

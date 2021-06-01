@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using TwentyFourHour.WebAPI.Providers;
 using TwentyFourHour.WebAPI.Models;
+using TwentyFourHour.Data;
 
 namespace TwentyFourHour.WebAPI
 {
