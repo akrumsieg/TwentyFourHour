@@ -9,7 +9,7 @@ namespace TwentyFourHour.Models.ReplyModels
     public class ReplyListItem
     {
         public int ReplyId { get; set; }
-        public string Title { get; set; }
+        public string Content { get; set; }
 
         public DateTimeOffset CreatedUtc { get; set; }
     }
