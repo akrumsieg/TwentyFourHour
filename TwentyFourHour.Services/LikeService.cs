@@ -25,6 +25,7 @@ namespace TwentyFourHour.Services
         {
             var entity = new Like()
             {
+                OwnerId = _userId,
                 PostId = model.PostId
             };
 
@@ -35,6 +36,14 @@ namespace TwentyFourHour.Services
             }
         }
 
+        //get likes by post id
+        public IEnumerable<LikeListItem> GetByPostId(int postId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Posts.Single(e => e.PostId == postId);
+            }
+        }
 
     }
 }
