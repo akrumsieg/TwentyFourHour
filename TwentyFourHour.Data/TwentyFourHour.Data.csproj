@@ -84,6 +84,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\202106021254221_InitialCreate.cs" />
+    <Compile Include="Migrations\202106021254221_InitialCreate.Designer.cs">
+      <DependentUpon>202106021254221_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106021530017_InitialMigration.cs" />
+    <Compile Include="Migrations\202106021530017_InitialMigration.Designer.cs">
+      <DependentUpon>202106021530017_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Reply.cs" />
     <Compile Include="Comment.cs" />
@@ -94,6 +103,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106021254221_InitialCreate.resx">
+      <DependentUpon>202106021254221_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106021530017_InitialMigration.resx">
+      <DependentUpon>202106021530017_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
