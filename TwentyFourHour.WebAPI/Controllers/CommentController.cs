@@ -23,7 +23,7 @@ namespace TwentyFourHour.WebAPI.Controllers
         public IHttpActionResult Get()
         {
             CommentService commentService = CreateCommentService();
-            var comment = commentService.GetComments();
+            var comment = commentService.GetCommentsByAuthor();
             return Ok();
         }
 
@@ -43,7 +43,7 @@ namespace TwentyFourHour.WebAPI.Controllers
         public IHttpActionResult GetCommentByPost(int id)
         {
             CommentService commentService = CreateCommentService();
-            var comment = commentService.GetCommentByPost(id);
+            var comment = commentService.GetCommentsByPost(id);
             return Ok(comment);        }
     }
 }

@@ -23,6 +23,7 @@ namespace TwentyFourHour.Services
             var entity = new Comment()
             {
                 AuthorId = _authorId,
+                PostId = model.PostId,
                 CommentText = model.CommentText,
                 CreatedUtc = DateTimeOffset.UtcNow
             };
@@ -34,7 +35,7 @@ namespace TwentyFourHour.Services
             }
         }
 
-        public IEnumerable<CommentListItem> GetComments()
+        public IEnumerable<CommentListItem> GetCommentsByAuthor()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -55,23 +56,17 @@ namespace TwentyFourHour.Services
             }
         }
 
-        public CommentDetail GetCommentByPost(int id)
+        public List<Comment> GetCommentsByPost(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                    .Comments
-                    .Single(e => e.CommentId == id && e.AuthorId == _authorId);
-                return
-                    new CommentDetail
-                    {
-                        CommentId = entity.CommentId,
-                        CommentText = entity.CommentText,
-                        CreatedUtc = entity.CreatedUtc,
-                        ModifiedUtc = entity.ModifiedUtc
-                    };
+                    .Posts
+                    .Single(e => e.PostId == id);
+                return entity.ListOfComments;
             }
+        }
     }
 }
 
