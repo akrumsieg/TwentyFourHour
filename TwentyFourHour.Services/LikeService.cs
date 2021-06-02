@@ -37,13 +37,14 @@ namespace TwentyFourHour.Services
         }
 
         //get likes by post id
-        //public IEnumerable<LikeListItem> GetByPostId(int postId)
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        var entity = ctx.Posts.Single(e => e.PostId == postId);
-        //    }
-        //}
+        public IEnumerable<Like> GetLikesByPostId(int postId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Posts.Single(e => e.PostId == postId);
+                return entity.ListOfLikes;
+            }
+        }
 
     }
 }

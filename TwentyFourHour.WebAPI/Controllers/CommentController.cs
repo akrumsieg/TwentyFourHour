@@ -23,8 +23,8 @@ namespace TwentyFourHour.WebAPI.Controllers
         public IHttpActionResult Get()
         {
             CommentService commentService = CreateCommentService();
-            var comment = commentService.GetComments();
-            return Ok();
+            var comments = commentService.GetComments();
+            return Ok(comments);
         }
 
         public IHttpActionResult Post(CommentCreate comment)
