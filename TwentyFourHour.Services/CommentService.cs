@@ -54,5 +54,26 @@ namespace TwentyFourHour.Services
                 return query.ToArray();
             }
         }
+
+            public CommentDetail GetCommentByPost(int id)
+            {
+                using (var ctx = new ApplicationDbContext())
+                {
+                    var entity =
+                        ctx
+                        .Comments
+                        .Single(e => e.CommentId == id && e.AuthorId == _authorId);
+                    return
+                        new CommentDetail
+                        {
+                            CommentId = entity.CommentId,
+                            CommentText = entity.CommentText,
+                            CreatedUtc = entity.CreatedUtc,
+                            ModifiedUtc = entity.ModifiedUtc
+                        };
+                }
+            }
+        }
     }
 }
+

@@ -39,5 +39,11 @@ namespace TwentyFourHour.WebAPI.Controllers
 
             return Ok();
         }
+
+        public IHttpActionResult GetCommentByPost(int id)
+        {
+            CommentService commentService = CreateCommentService();
+            var comment = commentService.GetCommentByPost(id);
+            return Ok(comment);        }
     }
 }
