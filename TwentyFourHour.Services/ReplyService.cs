@@ -56,7 +56,7 @@ namespace TwentyFourHour.Services
                                 new ReplyListItem
                                 {
                                     ReplyId = e.ReplyId,
-                                    Title = e.ReplyText
+                                    Content = e.ReplyText
                                 }
                         );
                 return query.ToArray();
