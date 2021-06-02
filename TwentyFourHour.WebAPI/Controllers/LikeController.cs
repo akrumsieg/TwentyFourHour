@@ -28,5 +28,13 @@ namespace TwentyFourHour.WebAPI.Controllers
             if (!service.CreateLike(model)) return InternalServerError();
             return Ok("Like was successfully created!");
         }
+
+        //read
+        public IHttpActionResult GetLikesByPostId(int postId)
+        {
+            var service = CreateLikeService();
+            var likes = service.GetLikesByPostId(postId);
+            return Ok(likes);
+        }
     }
 }
