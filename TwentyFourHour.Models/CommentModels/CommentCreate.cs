@@ -9,12 +9,13 @@ namespace TwentyFourHour.Models
 {
     public class CommentCreate
     {
+        public int PostId { get; set; }
 
         [Required]
         public int PostId { get; set; }
 
         [Required]
-        [MinLength(100, ErrorMessage = "Please make comment 100 characters long.")]
+        [MinLength(25, ErrorMessage = "Please make comment 100 characters long.")]
         [MaxLength(2000)]
         public string CommentText { get; set; }
 
