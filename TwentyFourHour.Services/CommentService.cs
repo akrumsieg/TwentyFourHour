@@ -56,7 +56,7 @@ namespace TwentyFourHour.Services
             }
         }
 
-        public List<Comment> GetCommentsByPost(int id)
+        public IEnumerable<Comment> GetCommentsByPostId(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {

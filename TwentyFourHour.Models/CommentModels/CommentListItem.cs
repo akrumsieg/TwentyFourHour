@@ -10,12 +10,11 @@ namespace TwentyFourHour.Models.CommentModels
     public class CommentListItem
     {
         public int CommentId { get; set; }
-        public Guid AuthorId { get; set; }
 
         public DateTimeOffset CreatedUtc { get; set; }
 
         [Required]
-        [MinLength(100, ErrorMessage = "Please make comment 100 characters long.")]
+        [MinLength(25, ErrorMessage = "Please make comment 25 characters long.")]
         [MaxLength(2000)]
         public string CommentText { get; set; }
     }

@@ -30,6 +30,7 @@ namespace TwentyFourHour.WebAPI.Controllers
         }
 
         //read
+        [Route("api/Like/{postId}")]
         public IHttpActionResult GetLikesByPostId(int postId)
         {
             var service = CreateLikeService();
