@@ -11,7 +11,8 @@ namespace TwentyFourHour.Models
     {
         public int PostId { get; set; }
 
-        public DateTimeOffset CreatedUtc { get; set; }
+        [Required]
+        public int PostId { get; set; }
 
         [Required]
         [MinLength(25, ErrorMessage = "Please make comment 100 characters long.")]

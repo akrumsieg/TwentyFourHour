@@ -22,6 +22,7 @@ namespace TwentyFourHour.Data
         public string PostText { get; set; }
 
         public virtual List<Comment> ListOfComments { get; set; }
+        
         public virtual List<Like> ListOfLikes { get; set; }
     }
 }

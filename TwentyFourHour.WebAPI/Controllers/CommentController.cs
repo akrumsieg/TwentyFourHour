@@ -25,6 +25,8 @@ namespace TwentyFourHour.WebAPI.Controllers
             CommentService commentService = CreateCommentService();
             var comment = commentService.GetCommentsByAuthor();
             return Ok();
+            var comments = commentService.GetComments();
+            return Ok(comments);
         }
 
         public IHttpActionResult Post(CommentCreate comment)

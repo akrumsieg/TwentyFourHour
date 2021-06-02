@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,24 +20,24 @@ namespace TwentyFourHour.Services
 
         public IEnumerable<PostListItem> GetPosts()
         {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var query =
-                    ctx
-                        .Posts
-                        .Where(e => e.AuthorId == _userId)
-                        .Select(
-                            e => new PostListItem
-                            {
-                                PostId = e.PostId,
-                                PostTitle = e.PostTitle,
-                                PostText = e.PostText,
-                                ListOfComments = e.ListOfComments,
-                                ListOfLikes = e.ListOfLikes
-                            });
+                using (var ctx = new ApplicationDbContext())
+                {
+                    var query =
+                        ctx
+                            .Posts
+                            .Where(e => e.AuthorId != null)
+                            .Select(
+                                e => new PostListItem
+                                {
+                                    PostId = e.PostId,
+                                    PostTitle = e.PostTitle,
+                                    PostText = e.PostText,
+                                    ListOfComments = e.ListOfComments,
+                                    ListOfLikes = e.ListOfLikes
+                                });
 
-                return query.ToArray();
-            }
+                    return query.ToArray();
+                }
         }
 
         public bool CreatePost(PostCreate model)

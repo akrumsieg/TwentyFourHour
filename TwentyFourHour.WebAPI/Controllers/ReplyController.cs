@@ -27,7 +27,7 @@ namespace TwentyFourHour.WebAPI.Controllers
             if (!service.CreateReply(reply))
                 return InternalServerError();
 
-            return Ok();
+            return Ok(reply);
         }
         public IHttpActionResult Get(int id)
         {
