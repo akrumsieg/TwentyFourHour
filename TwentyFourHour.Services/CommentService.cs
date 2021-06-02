@@ -13,7 +13,7 @@ namespace TwentyFourHour.Services
     {
         private readonly Guid _authorId;
 
-        public PostService(Guid authorId)
+        public CommentService(Guid authorId)
         {
             _authorId = authorId;
         }
@@ -55,23 +55,22 @@ namespace TwentyFourHour.Services
             }
         }
 
-            public CommentDetail GetCommentByPost(int id)
+        public CommentDetail GetCommentByPost(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
             {
-                using (var ctx = new ApplicationDbContext())
-                {
-                    var entity =
-                        ctx
-                        .Comments
-                        .Single(e => e.CommentId == id && e.AuthorId == _authorId);
-                    return
-                        new CommentDetail
-                        {
-                            CommentId = entity.CommentId,
-                            CommentText = entity.CommentText,
-                            CreatedUtc = entity.CreatedUtc,
-                            ModifiedUtc = entity.ModifiedUtc
-                        };
-                }
+                var entity =
+                    ctx
+                    .Comments
+                    .Single(e => e.CommentId == id && e.AuthorId == _authorId);
+                return
+                    new CommentDetail
+                    {
+                        CommentId = entity.CommentId,
+                        CommentText = entity.CommentText,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
             }
         }
     }
