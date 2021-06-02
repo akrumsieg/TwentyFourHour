@@ -56,15 +56,22 @@ namespace TwentyFourHour.Services
             }
         }
 
-        public IEnumerable<Comment> GetCommentsByPostId(int id)
+        public IEnumerable<CommentListItem> GetCommentsByPostId(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
+                var query =
                     ctx
-                    .Posts
-                    .Single(e => e.PostId == id);
-                return entity.ListOfComments;
+                    .Comments
+                    .Where(e => e.PostId == id)
+                    .Select(e =>
+                    new CommentListItem
+                    {
+                        CommentId = e.CommentId,
+                        CommentText = e.CommentText,
+                        CreatedUtc = e.CreatedUtc
+                    });
+                return query.ToArray();
             }
         }
     }

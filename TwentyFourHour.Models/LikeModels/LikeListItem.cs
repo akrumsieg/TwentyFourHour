@@ -9,7 +9,6 @@ namespace TwentyFourHour.Models.LikeModels
     public class LikeListItem
     {
         public int LikeId { get; set; }
-        public Guid OwnerId { get; set; }
 
     }
 }
