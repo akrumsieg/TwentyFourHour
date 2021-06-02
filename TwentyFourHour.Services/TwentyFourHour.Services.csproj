@@ -74,6 +74,10 @@
       <Project>{9B378DB6-3553-4198-AAEF-0B4B2A7197E2}</Project>
       <Name>TwentyFourHour.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TwentyFourHour.Models\TwentyFourHour.Models.csproj">
+      <Project>{c9c63ab0-565b-4d3e-b022-6685e3651683}</Project>
+      <Name>TwentyFourHour.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
