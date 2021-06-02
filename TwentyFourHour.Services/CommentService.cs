@@ -72,7 +72,6 @@ namespace TwentyFourHour.Services
                         ModifiedUtc = entity.ModifiedUtc
                     };
             }
-        }
     }
 }
 
