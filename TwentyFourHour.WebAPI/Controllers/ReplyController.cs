@@ -16,7 +16,7 @@ namespace TwentyFourHour.WebAPI.Controllers
         public IHttpActionResult Get()
         {
             ReplyService replyService = CreateReplyService();
-            var replies = replyService.GetReplies();
+            var replies = replyService.GetRepliesByAuthorId();
             return Ok(replies);
         }
         public IHttpActionResult Post(ReplyCreate reply)
@@ -28,6 +28,12 @@ namespace TwentyFourHour.WebAPI.Controllers
                 return InternalServerError();
 
             return Ok();
+        }
+        public IHttpActionResult Get(int id)
+        {
+            ReplyService replyService = CreateReplyService();
+            var reply = replyService.GetRepliesByCommentId(id);
+            return Ok(reply);
         }
         private ReplyService CreateReplyService()
         {
