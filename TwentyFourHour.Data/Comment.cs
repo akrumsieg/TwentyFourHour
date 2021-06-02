@@ -13,20 +13,17 @@ namespace TwentyFourHour.Data
         [Key]
         public int CommentId { get; set; }
         public string CommentText { get; set; }
-       
+
         [Required]
         public Guid AuthorId { get; set; }
 
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
-        
-        public virtual ICollection<Reply> Replies { get; set; }
 
+        public virtual ICollection<Reply> Replies { get; set; }
         
         [ForeignKey(nameof(Post))]
         public int PostId { get; set; }
         public virtual Post Post { get; set; }
-
-
     }
 }
