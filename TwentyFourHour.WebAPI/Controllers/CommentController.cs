@@ -43,7 +43,7 @@ namespace TwentyFourHour.WebAPI.Controllers
         public IHttpActionResult GetCommentByPost(int id)
         {
             CommentService commentService = CreateCommentService();
-            var comment = commentService.GetCommentByPost(id);
+            var comment = commentService.GetCommentsByPostId(id);
             return Ok(comment);        }
     }
 }

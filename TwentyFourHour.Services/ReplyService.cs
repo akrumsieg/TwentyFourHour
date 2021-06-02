@@ -22,8 +22,8 @@ namespace TwentyFourHour.Services
                 new Reply()
                 {
                     AuthorId = _userId,
-                    ReplyText = model.Content
-                    
+                    ReplyText = model.Content,
+                    CommentId = model.CommentId
                 };
             using (var ctx = new ApplicationDbContext())
             {
