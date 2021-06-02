@@ -31,7 +31,19 @@ namespace TwentyFourHour.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<ReplyListItem> GetReplies()
+
+        public IEnumerable<Reply> GetRepliesByCommentId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Comments
+                        .Single(e => e.CommentId == id && e.AuthorId == _userId);
+                return entity.Replies;
+            }
+        }
+        public IEnumerable<ReplyListItem> GetRepliesByAuthorId()
         {
             using (var ctx = new ApplicationDbContext())
             {

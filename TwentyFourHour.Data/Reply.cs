@@ -17,8 +17,8 @@ namespace TwentyFourHour.Data
         [Required]
         public Guid AuthorId { get; set; }
 
-        [ForeignKey(nameof(Comments))]
+        [ForeignKey(nameof(Comment))]
         public int CommentId { get; set; }
-        public virtual Comment Comments { get; set; }
+        public virtual Comment Comment { get; set; }
     }
 }
