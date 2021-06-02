@@ -13,7 +13,7 @@ namespace TwentyFourHour.Services
     {
         private readonly Guid _authorId;
 
-        public PostService(Guid authorId)
+        public CommentService(Guid authorId)
         {
             _authorId = authorId;
         }
@@ -73,7 +73,6 @@ namespace TwentyFourHour.Services
                         };
                 }
             }
-        }
     }
 }
 
